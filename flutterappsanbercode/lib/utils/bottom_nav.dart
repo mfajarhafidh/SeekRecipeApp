@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterappsanbercode/pages/search_screen.dart';
 import 'package:flutterappsanbercode/pages/profile_screen.dart';
-import 'package:flutterappsanbercode/routes/route_name.dart';
 import 'package:flutterappsanbercode/pages/home.dart';
 
 class BottomNav extends StatefulWidget {
+  const BottomNav({super.key});
+
   @override
   _BottomNavState createState() => _BottomNavState();
 }
@@ -13,9 +14,9 @@ class _BottomNavState extends State<BottomNav> {
    int selectedIndex = 0;
 
   final _pageOptions = [
-    HomePage(),
-    SearchScreen(),
-    ProfileScreen(),
+    const HomePage(),
+    const SearchScreen(),
+    const ProfileScreen(),
   ];
 
   @override
@@ -38,7 +39,7 @@ class _BottomNavState extends State<BottomNav> {
           ),
         ],
         currentIndex: selectedIndex,
-        selectedItemColor: Color.fromARGB(255, 38, 126, 95),
+        selectedItemColor: const Color.fromARGB(255, 38, 126, 95),
         onTap: (index) {
           setState(() {
             selectedIndex = index;

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutterappsanbercode/pages/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -12,11 +14,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
 	  super.initState();
-	  Timer(Duration(seconds: 3),
+	  Timer(const Duration(seconds: 3),
   		()=>Navigator.pushReplacement(context,
 										MaterialPageRoute(builder:
 														(context) =>
-														LoginScreen()
+														const LoginScreen()
 														)
 									)
 		);
@@ -25,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
 	  return Container(
-	    color: Color.fromARGB(255, 239, 238, 235),
+	    color: const Color.fromARGB(255, 239, 238, 235),
 	    child: Image.asset('assets/img/SeekRecipe.png')
 	  );
   }

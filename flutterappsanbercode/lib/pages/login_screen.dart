@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutterappsanbercode/routes/route_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
       _firebaseAuth
           .signInWithEmailAndPassword(
             email: _emailController.text, password: _passwordController.text)
-              .then((value) => Get.toNamed(RouteName.bottom_nav));
+              .then((value) => Get.toNamed(RouteName.bottomNav));
     } catch(e) {
       print(e);
       SnackBar(content: Text(e.toString()));
@@ -37,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundImage: AssetImage('assets/img/SeekRecipe.png'),
                 radius: 150,
               ),
@@ -49,13 +48,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 height: 50,
                 width: 232,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 38, 50, 56)),
+                  border: Border.all(color: const Color.fromARGB(255, 38, 50, 56)),
                   borderRadius: BorderRadius.circular(10)),
                 child: TextFormField(
                   controller: _emailController,
-                  decoration: InputDecoration.collapsed(hintText: "E-mail"),
+                  decoration: const InputDecoration.collapsed(hintText: "E-mail"),
                 ),
               ),
 
@@ -66,15 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 height: 50,
                 width: 232,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 38, 50, 56)),
+                  border: Border.all(color: const Color.fromARGB(255, 38, 50, 56)),
                   borderRadius: BorderRadius.circular(10),
                   ),
                 child: TextFormField(
                   controller: _passwordController,
                   obscureText: true,
-                  decoration: InputDecoration.collapsed(hintText: "Password"),
+                  decoration: const InputDecoration.collapsed(hintText: "Password"),
                 ),
               ),
               
@@ -86,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.center,
                 height: 24,
                 width: double.infinity,
-                child: Text("Forgot Password?"),
+                child: const Text("Forgot Password?"),
 
               ),
 
@@ -98,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 40,
                 width: 328,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 38, 126, 95),
+                  color: const Color.fromARGB(255, 38, 126, 95),
                   borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   onPressed: () {
@@ -116,23 +115,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 20,
               ),
 
-              Container(
+              SizedBox(
                 height: 60,
                 width: double.infinity,
                 child: TextButton(
-                  child: Text(
-                    "You don't have an account yet? Sign up",
-                    style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      ),
-                    ),
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.blue,
                   ),
                   onPressed: (() {
-                      Get.toNamed(RouteName.register_screen);
+                      Get.toNamed(RouteName.registerScreen);
                     }
-                  )
+                  ),
+                  child: const Text(
+                    "You don't have an account yet? Sign up",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      ),
+                    )
                 ),
               )
             ],

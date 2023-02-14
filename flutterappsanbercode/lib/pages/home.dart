@@ -4,6 +4,8 @@ import 'package:flutterappsanbercode/models/recipe.dart';
 import 'package:flutterappsanbercode/pages/recipe_card.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -29,7 +31,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: _isLoading
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : ListView.builder(
                 itemCount: _recipes.length,
                 itemBuilder: (context, index) {

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterappsanbercode/routes/route_name.dart';
-import 'package:get/get.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class RecipeDetailsScreen extends StatefulWidget {
   const RecipeDetailsScreen({super.key});
@@ -23,7 +20,7 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
       body: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, 
-              children: [
+              children: const [
                 Text('Recipe Detail Page')
               ],
             )

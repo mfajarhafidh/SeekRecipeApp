@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutterappsanbercode/routes/route_name.dart';
-import 'package:flutterappsanbercode/pages/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -23,7 +21,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       await _firebaseAuth.createUserWithEmailAndPassword(
         email: _emailController.text.toString().trim(),
         password: _passwordController.text)
-        .then((value) => Get.toNamed(RouteName.login_screen));
+        .then((value) => Get.toNamed(RouteName.loginScreen));
     } catch(e) {
       print(e);
       SnackBar(content: Text(e.toString()));
@@ -34,13 +32,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 239, 238, 235),
-        title: Text("Register"),
+        backgroundColor: const Color.fromARGB(255, 239, 238, 235),
+        title: const Text("Register"),
         leading: IconButton(
           onPressed: (){
-            Get.toNamed(RouteName.login_screen);
+            Get.toNamed(RouteName.loginScreen);
           },
-          icon:Icon(Icons.arrow_back), 
+          icon:const Icon(Icons.arrow_back), 
         )
       ),
 
@@ -50,7 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundImage: AssetImage('assets/icon/SeekRecipeIcon.png'),
                 radius: 140,
               ),
@@ -62,13 +60,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Container(
                 height: 50,
                 width: 232,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 38, 50, 56)),
+                  border: Border.all(color: const Color.fromARGB(255, 38, 50, 56)),
                   borderRadius: BorderRadius.circular(10)),
                 child: TextFormField(
                   controller: _emailController,
-                  decoration: InputDecoration.collapsed(hintText: "E-mail"),
+                  decoration: const InputDecoration.collapsed(hintText: "E-mail"),
                 ),
               ),
 
@@ -79,13 +77,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Container(
                 height: 50,
                 width: 232,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 38, 50, 56)),
+                  border: Border.all(color: const Color.fromARGB(255, 38, 50, 56)),
                   borderRadius: BorderRadius.circular(10),
                   ),
                 child: TextFormField(
-                  decoration: InputDecoration.collapsed(hintText: "Full Name"),
+                  decoration: const InputDecoration.collapsed(hintText: "Full Name"),
                 ),
               ),
               
@@ -96,15 +94,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Container(
                 height: 50,
                 width: 232,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 38, 50, 56)),
+                  border: Border.all(color: const Color.fromARGB(255, 38, 50, 56)),
                   borderRadius: BorderRadius.circular(10),
                   ),
                 child: TextFormField(
                   controller: _passwordController,
                   obscureText: true,
-                  decoration: InputDecoration.collapsed(hintText: "Password"),
+                  decoration: const InputDecoration.collapsed(hintText: "Password"),
                 ),
               ),
 
@@ -115,14 +113,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Container(
                 height: 50,
                 width: 232,
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 38, 50, 56)),
+                  border: Border.all(color: const Color.fromARGB(255, 38, 50, 56)),
                   borderRadius: BorderRadius.circular(10),
                   ),
                 child: TextFormField(
                   obscureText: true,
-                  decoration: InputDecoration.collapsed(hintText: "Confirmation Password"),
+                  decoration: const InputDecoration.collapsed(hintText: "Confirmation Password"),
                 ),
               ),
 
@@ -134,7 +132,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 height: 40,
                 width: 328,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 38, 126, 95),
+                  color: const Color.fromARGB(255, 38, 126, 95),
                   borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   onPressed: () {

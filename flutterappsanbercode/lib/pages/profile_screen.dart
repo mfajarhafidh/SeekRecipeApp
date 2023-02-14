@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterappsanbercode/routes/route_name.dart';
 import 'package:profile/profile.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -27,10 +25,10 @@ class ProfileScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                IconButton(icon: Icon(Icons.logout), onPressed: () {
-                  _signOut().then((value) => Get.toNamed(RouteName.login_screen));
+                IconButton(icon: const Icon(Icons.logout), onPressed: () {
+                  _signOut().then((value) => Get.toNamed(RouteName.loginScreen));
                 }),
-                Text('Logout')
+                const Text('Logout')
               ],
             ),
 

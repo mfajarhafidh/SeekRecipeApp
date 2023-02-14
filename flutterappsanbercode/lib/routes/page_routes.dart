@@ -3,33 +3,31 @@ import 'package:flutterappsanbercode/pages/recipe_details_screen.dart';
 import 'package:flutterappsanbercode/utils/bottom_nav.dart';
 import 'package:flutterappsanbercode/pages/login_screen.dart';
 import 'package:flutterappsanbercode/pages/register_screen.dart';
-import 'package:flutterappsanbercode/pages/recipe_details_screen.dart';
 import 'package:flutterappsanbercode/routes/route_name.dart';
 import 'package:get/get.dart';
 
-import 'package:flutterappsanbercode/utils/bottom_nav.dart';
 
-class pageRouteApp {
+class PageRouteApp {
   static final pages = [
     GetPage(
-      name: RouteName.register_screen,
-      page: () => RegisterScreen(),
+      name: RouteName.registerScreen,
+      page: () => const RegisterScreen(),
       ),
     GetPage(
-      name: RouteName.login_screen,
-      page: () => LoginScreen(),
+      name: RouteName.loginScreen,
+      page: () => const LoginScreen(),
       ),
     GetPage(
-      name: RouteName.home_screen,
-      page: () => HomePage(),
+      name: RouteName.homeScreen,
+      page: () => const HomePage(),
       ),
     GetPage(
-      name: RouteName.bottom_nav,
-      page: () => BottomNav(),
+      name: RouteName.bottomNav,
+      page: () => const BottomNav(),
       ),
     GetPage(
-      name: RouteName.recipe_details_screen,
-      page: () => RecipeDetailsScreen(),
+      name: RouteName.recipeDetailsScreen,
+      page: () => const RecipeDetailsScreen(),
       ),
   ];
 }
